@@ -26,3 +26,6 @@ app_state.json # If it were used for persistence
 
 # Logs
 *.log
+
+# Backup folder
+backup/
