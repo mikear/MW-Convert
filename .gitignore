@@ -1,0 +1,30 @@
+# Python
+*.pyc
+*.pyo
+__pycache__/
+.Python
+build/
+dist/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+.vs/
+
+# Operating System
+.DS_Store
+Thumbs.db
+
+# Generated files
+output/
+*.docx
+*.html
+*.md
+app_state.json # If it were used for persistence
+
+# Logs
+*.log
