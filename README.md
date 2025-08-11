@@ -1,17 +1,3 @@
-¡Entendido! Tomaré tu README.md original y lo modificaré para integrar las imágenes de manera profesional.
-
-La idea es mantener todo tu texto original pero enriquecerlo con una sección visual que muestre la aplicación en acción. Esto se hace añadiendo una galería de imágenes justo después de la introducción.
-
-Aquí tienes el código de tu README.md original, modificado para incluir las imágenes. Simplemente copia y pega este código completo en tu archivo README.md.
-
-(COPIA Y PEGA ESTE CÓDIGO EN TU README.MD)
-
-code
-Markdown
-download
-content_copy
-expand_less
-
 ![Banner de MW Converter](assets/banner.png)
 
 # MW Convert
@@ -89,19 +75,3 @@ Correo Electrónico: diego_rabalo@hotmail.com
 Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-
-code
-Code
-download
-content_copy
-expand_less
-IGNORE_WHEN_COPYING_START
-IGNORE_WHEN_COPYING_END
-### ¿Qué cambios he hecho?
-
-1.  **Banner Superior:** Agregué tu banner profesional justo al principio para una excelente primera impresión.
-2.  **Nueva Sección "Galería de la Aplicación":** Creé una sección justo después de la descripción principal.
-3.  **Tabla de Imágenes:** Usé una tabla de Markdown para mostrar la captura principal de la aplicación junto al resultado de la conversión. Esto le da un aspecto muy ordenado y profesional.
-4.  **Rutas Correctas:** Me aseguré de que todas las rutas de las imágenes apunten a la carpeta `assets/`, que es la mejor práctica.
-
-El resto de tu contenido (Características, Requisitos, etc.) se ha mantenido intacto, tal y como lo tenías.
