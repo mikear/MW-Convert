@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manual de ayuda para MW Convert">
+    <title>Manual de Ayuda de MW Convert</title>
+    <style>
+        :root {
+            --primary-color: #0056b3;
+            --text-color: #333;
+            --bg-color: #FFFFFF;
+            --section-bg: #F8F8F8;
+            --note-bg: #e0f7fa;
+            --note-border: #00bcd4;
+            --shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px auto;
+            padding: 30px;
+            max-width: 900px; /* Slightly narrower for better line length */
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); /* More prominent shadow */
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-bottom: 2px solid var(--primary-color); /* Thicker, colored border */
+            padding-bottom: 0.8rem;
+            margin: 2.5rem 0 1.5rem;
+        }
+
+        ul, ol {
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.8rem;
+        }
+
+        .section {
+            background-color: var(--section-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .note {
+            background-color: var(--note-bg);
+            border-left: 8px solid var(--note-border); /* Thicker border */
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+        }
+
+        code {
+            background-color: #e0e0e0;
+            padding: 0.3em 0.5em;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.95em;
+        }
+
+        a {
+            color: #0000FF; /* Blue for all links */
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0000AA; /* Darker blue on hover */
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            .section {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Manual de Ayuda de MW Convert</h1>
+
+    <div class="section">
+        <h2>Requisitos Previos</h2>
+        <ul>
+            <li><strong>Pandoc</strong> instalado y accesible desde la línea de comandos.</li>
+            <li><strong>Python 3.7 o superior</strong> y <strong>PySide6</strong> instalados.</li>
+        </ul>
+        <div class="note">
+            <strong>¿No ve la barra de progreso?</strong> No necesita instalar nada extra. La barra aparece automáticamente durante la conversión si PySide6 está correctamente instalado.
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>1. Flujo de Trabajo Principal</h2>
+        <ol>
+            <li>
+                <strong>Seleccionar Archivo Markdown (.md):</strong>
+                <ul>
+                    <li>Pulse "Buscar archivo .md" para elegir su documento, o arrástrelo y suéltelo en el área designada.</li>
+                    <li>El nombre del archivo aparecerá en la interfaz.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Seleccionar Plantilla DOCX (Opcional):</strong>
+                <ul>
+                    <li>Pulse "Seleccionar Plantilla DOCX" para aplicar un estilo personalizado.</li>
+                    <li>Puede quitar la plantilla con el icono de papelera.</li>
+                </ul>
+            </li>
+            <li>
+                <strong>Convertir y Abrir:</strong>
+                <ul>
+                    <li>Pulse "Convertir a DOCX".</li>
+                    <li>Durante la conversión, verá una barra de progreso animada indicando que el proceso está en curso.</li>
+                    <li>Al finalizar, podrá abrir el documento generado o la carpeta de salida.</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>2. Funcionalidades Adicionales</h2>
+        <ul>
+            <li><strong>Nuevo Proyecto:</strong> Reinicia la aplicación para una nueva conversión.</li>
+            <li><strong>Menú "Archivo":</strong> Acceso rápido a "Nuevo Proyecto" y "Salir".</li>
+            <li><strong>Menú "Ayuda":</strong>
+                <ul>
+                    <li><strong>Manual de Ayuda:</strong> Abre este manual.</li>
+                    <li><strong>Compartir:</strong> Publica sobre MW Convert en LinkedIn usando el icono <img src="icons/linkedin_icon.ico" width="16" height="16" style="vertical-align: middle;"/>.</li>
+                    <li><strong>Acerca de:</strong> Muestra información detallada sobre la versión actual (1.1) y las últimas mejoras de MW Convert.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>3. Solución de Problemas Comunes</h2>
+        <ul>
+            
+            <li><strong>Errores de conversión:</strong> Revise la consola para mensajes detallados. Verifique el formato del archivo Markdown y la validez de la plantilla DOCX. Si recibe un error relacionado con Pandoc, asegúrese de que esté correctamente instalado y en su PATH.</li>
+            <li><strong>La barra de progreso no aparece:</strong> Asegúrese de tener PySide6 instalado y que la ventana de la aplicación esté visible durante la conversión.</li>
+        </ul>
+    </div>
+
+    <div class="faq">
+        <h2>4. Preguntas Frecuentes (FAQ)</h2>
+        <ul>
+            <li><strong>¿Dónde se guardan los archivos convertidos?</strong> En la carpeta <code>output</code> dentro del directorio de la aplicación.</li>
+            <li><strong>¿Puedo cancelar una conversión en curso?</strong> Actualmente no, pero la conversión suele ser rápida. Si se queda bloqueada, cierre y reinicie la aplicación.</li>
+            <li><strong>¿Qué tipos de archivos Markdown son compatibles?</strong> Cualquier archivo con extensión <code>.md</code> que siga la sintaxis estándar de Markdown.</li>
+            <li><strong>¿Puedo usar plantillas DOCX personalizadas?</strong> Sí, puede seleccionar cualquier archivo DOCX como plantilla de estilos.</li>
+        </ul>
+    </div>
+
+    <div class="note">
+        <p><strong>Nota:</strong> Los archivos DOCX convertidos se guardan en la carpeta <code>output</code> dentro del directorio de la aplicación. Puede abrirlos directamente desde la interfaz tras la conversión.</p>
+    </div>
+
+    <div class="section">
+        <h2>5. Contacto y Soporte</h2>
+        <p>Si tienes preguntas, sugerencias o necesitas soporte, no dudes en contactar a Diego A. Rábalo:</p>
+        <ul>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rabalo?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYmE7N4DBTRqMk9Vla0BdWQ%3D%3D">Perfil de Diego A. Rábalo en LinkedIn</a></li>
+            <li><strong>Correo Electrónico:</strong> <a href="mailto:diego_rabalo@hotmail.com">diego_rabalo@hotmail.com</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>

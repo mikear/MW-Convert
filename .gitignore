@@ -22,8 +22,6 @@ Thumbs.db
 # Generated files
 output/
 *.docx
-*.html
-*.md
 app_state.json # If it were used for persistence
 
 # Logs
