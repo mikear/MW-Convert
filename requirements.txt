@@ -1,1 +1,4 @@
+# IMPORTANTE: Esta aplicación también requiere que Pandoc esté instalado en el sistema.
+# Puede descargarlo desde https://pandoc.org/installing.html
+
 PySide6
