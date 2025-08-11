@@ -75,6 +75,7 @@ Una vez que la aplicación esté abierta, sigue el flujo de trabajo de 3 pasos:
 
 Desarrollado por **Diego A. Rábalo**
 
+-   **Github:**  [Diego A. Rábalo | Criminólogo & Python Developer].(https://github.com/mikear) 
 -   **LinkedIn:** [Perfil de Diego A. Rábalo](https://www.linkedin.com/in/rabalo)
 -   **Correo Electrónico:** [diego_rabalo@hotmail.com](mailto:diego_rabalo@hotmail.com)
 
