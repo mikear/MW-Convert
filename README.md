@@ -63,13 +63,22 @@ Para iniciar la aplicación, ejecuta el siguiente comando desde el directorio ra
 
 ```bash
 python gui_app.py
+```
+
 Una vez que la aplicación esté abierta, sigue el flujo de trabajo de 3 pasos:
-Selecciona o arrastra tu archivo Markdown.
-Selecciona una plantilla DOCX (opcional).
-Haz clic en "Convertir a DOCX" y luego abre tu documento o la carpeta de salida.
+
+1.  **Selecciona o arrastra** tu archivo Markdown.
+2.  **Selecciona una plantilla DOCX** (opcional).
+3.  **Haz clic en "Convertir a DOCX"** y luego abre tu documento o la carpeta de salida.
+
 Créditos
-Desarrollado por Diego A. Rábalo
-LinkedIn: Perfil de Diego A. Rábalo
-Correo Electrónico: diego_rabalo@hotmail.com
-Licencia
-Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+Desarrollado por **Diego A. Rábalo**
+
+-   **LinkedIn:** [Perfil de Diego A. Rábalo](https://www.linkedin.com/in/rabalo)
+-   **Correo Electrónico:** [diego_rabalo@hotmail.com](mailto:diego_rabalo@hotmail.com)
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
