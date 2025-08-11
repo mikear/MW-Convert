@@ -226,7 +226,7 @@ class MarkdownConverterApp(QMainWindow):
         self.layout.addWidget(self.output_group)
 
         # Developed by and LinkedIn link
-        app_info_label = QLabel("MW Convert v1.1 (2025)")
+        app_info_label = QLabel("MW Convert v1.2 (2025)")
         app_info_label.setAlignment(Qt.AlignCenter)
         self.layout.addWidget(app_info_label)
 
@@ -409,7 +409,7 @@ class MarkdownConverterApp(QMainWindow):
     def show_about_dialog(self):
         about_dialog = QDialog(self)
         about_dialog.setWindowTitle("Acerca de")
-        about_dialog.setGeometry(250, 250, 400, 200)
+        about_dialog.setGeometry(250, 250, 450, 350)
 
         layout = QVBoxLayout()
         text_browser = QTextBrowser()
@@ -427,19 +427,24 @@ class MarkdownConverterApp(QMainWindow):
             }
         """)
         text_browser.setHtml("""
-            <p><b>MW Convert</b></p>
+            <p><b>MW Convert v1.2</b></p>
             <p>Desarrollado por Diego A. Rábalo</p>
-            <p>Contacto:</p>
+            <p><b>Contacto:</b></p>
             <ul>
+                <li><a href="https://github.com/mikear">GitHub</a></li>
                 <li><img src=\"icons/linkedin_icon.ico\" width=\"16\" height=\"16\" style=\"vertical-align: middle;\"/> <a href=\"https://www.linkedin.com/in/rabalo\">LinkedIn</a></li>
                 <li><a href=\"mailto:diego_rabalo@hotmail.com\">diego_rabalo@hotmail.com</a></li>
             </ul>
-            <p><b>Notas de la Versión 1.1:</b></p>
+            <p><b>Notas de la Versión 1.2:</b></p>
             <ul>
-                <li>Interfaz de usuario mejorada con flujo de trabajo de 3 pasos.</li>
-                <li>Conversión de estilos DOCX mejorada con integración de Pandoc.</li>
-                <li>Iconos actualizados para una mejor experiencia visual.</li>
-                <li>Información del desarrollador añadida.</li>
+                <li>Corrección de errores críticos en el formateo de listas, código y otros elementos de Markdown.</li>
+                <li>Se migró el motor de conversión a la librería `pypandoc` para mayor estabilidad y precisión.</li>
+                <li>Actualización de la información de contacto y créditos.</li>
+            </ul>
+            <p><b>Créditos y Agradecimientos:</b></p>
+            <ul>
+                <li>A <b>The Qt Company</b> por el framework <a href=\"https://www.qt.io/product/qt6/pyside6\">PySide6</a>.</li>
+                <li>A <b>Juho Vepsäläinen</b> (creador) y <b>Jessica Tegner</b> (mantenedora) por la librería <a href=\"https://github.com/JessicaTegner/pypandoc\">pypandoc</a>.</li>
             </ul>
         """)
         layout.addWidget(text_browser)
