@@ -1,58 +1,37 @@
-C:\Users\diego\OneDrive\Documentos\app\PANDOCS\pandoc_app\
-├───gui_app.py
-├───main.py
-├───manual.html
-├───__pycache__\
-│   └───main.cpython-313.pyc
-├───.vs\
-│   ├───ProjectSettings.json
-│   ├───slnx.sqlite
-│   ├───VSWorkspaceState.json
-│   └───pandoc_app\
-│       ├───copilot-chat\
-│       │   └───a774d48d\
-│       │       └───sessions\
-│       │           └───1e81962b-12fd-4c91-a80d-2ca22d111029
-│       ├───CopilotIndices\
-│       │   ├───17.14.939.21063\
-│       │   │   ├───CodeChunks.db
-│       │   │   └───SemanticSymbols.db
-│       │   └───17.14.995.13737\
-│       │       ├───CodeChunks.db
-│       │       └───SemanticSymbols.db
-│       ├───FileContentIndex\
-│       │   ├───10afb7a4-8ead-4580-94c3-aa83f858f826.vsidx
-│       │   ├───1b02468e-93db-4da5-8741-624327dd3a22.vsidx
-│       │   ├───8e312c86-7e4b-4476-a2e3-bdab15e2a62f.vsidx
-│       │   ├───94c7e837-b3d6-4833-bd26-1f9ced147a19.vsidx
-│       │   └───b6b48aca-a30e-4406-9211-1582ac551ca2.vsidx
-│       └───v17\
-│           ├───.wsuo
-│           ├───DocumentLayout.backup.json
-│           └───DocumentLayout.json
-├───icons\
-│   ├───application-exit.svg
-│   ├───applications-office.svg
-│   ├───document-new.svg
-│   ├───document-open.svg
-│   ├───document-save.svg
-│   ├───edit-clear.svg
-│   ├───folder-open.svg
-│   ├───help-browser.svg
-│   └───custom_icons\
-│       ├───app_icon.ico
-│       ├───application-exit.svg
-│       ├───applications-office.svg
-│       ├───document-new.svg
-│       ├───document-open.svg
-│       ├───document-save.svg
-│       ├───edit-clear.svg
-│       ├───folder-open.svg
-│       └───help-browser.svg
-├───markdowns\
-│   └───full_markdown_test.md
-├───output\
-│   ├───full_markdown_test.docx
-│   └───test_input.docx
-├───styles\
-└───templates\
+pandoc_app/
+├── .gitignore
+├── app_state.json
+├── folder_structure.txt
+├── gui_app.py
+├── main.py
+├── manual.html
+├── README.md
+├── requirements.txt
+├── assets/
+│   ├── app-screenshot.png
+│   ├── banner.png
+│   ├── before-after.png
+│   ├── help-manual.png
+│   ├── markdown-example.png
+│   └── output-example.png
+├── examples/
+│   └── output/
+│       └── full_markdown_test.docx
+├── icons/
+│   ├── application-exit.svg
+│   ├── applications-office.svg
+│   ├── document-new.svg
+│   ├── document-open.svg
+│   ├── document-save.svg
+│   ├── docx_win-256_32_35918.ico
+│   ├── edit-clear.svg
+│   ├── folder-open.svg
+│   ├── help-browser.svg
+│   ├── icono_app.ico
+│   └── linkedin_icon.ico
+├── markdowns/
+│   └── full_markdown_test.md
+├── styles/
+│   └── .gitkeep
+└── templates/
+    └── .gitkeep
