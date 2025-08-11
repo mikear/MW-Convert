@@ -71,7 +71,7 @@ Una vez que la aplicación esté abierta, sigue el flujo de trabajo de 3 pasos:
 2.  **Selecciona una plantilla DOCX** (opcional).
 3.  **Haz clic en "Convertir a DOCX"** y luego abre tu documento o la carpeta de salida.
 
-Créditos
+##Créditos
 
 Desarrollado por **Diego A. Rábalo**
 
