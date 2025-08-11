@@ -1,6 +1,26 @@
+![Banner de MW Converter](assets/banner.png)
+
 # MW Convert
 
 MW Convert es una aplicación de escritorio intuitiva y fácil de usar diseñada para convertir archivos Markdown (`.md`) a documentos DOCX (`.docx`) con soporte para plantillas personalizadas.
+
+---
+
+## ✨ Galería de la Aplicación
+
+| Interfaz Principal | Manual de Ayuda Integrado |
+| :---: | :---: |
+| ![Captura de la aplicación MW Convert](assets/app-screenshot.png) | ![Captura del manual de ayuda](assets/help-manual.png) |
+
+### Conversión de Alta Fidelidad
+
+Transforma texto plano en documentos profesionales con un solo clic.
+
+| Markdown de Entrada | Documento de Salida |
+| :---: | :---: |
+| ![Ejemplo de código Markdown](assets/markdown-example.png) | ![Ejemplo de documento de salida](assets/output-example.png) |
+
+---
 
 ## Características
 
@@ -18,7 +38,7 @@ Para ejecutar MW Convert, necesitas tener instalado lo siguiente:
 -   **Python 3.7 o superior:** Puedes descargarlo desde [python.org](https://www.python.org/).
 -   **PySide6:** La biblioteca de Python para la interfaz gráfica de usuario.
 -   **Pandoc:** Una herramienta universal de conversión de documentos. Asegúrate de que esté instalado y accesible desde la línea de comandos (añadido a tu PATH).
-    -   Descarga Pandoc desde [pandoc.org](https://pandoc.org/installing.html).
+    -   Descarga Pandoc desde [pandoc.org/installing.html](https://pandoc.org/installing.html).
 
 ## Instalación
 
@@ -26,8 +46,8 @@ Sigue estos pasos para configurar y ejecutar MW Convert en tu máquina local:
 
 1.  **Clona el repositorio:**
     ```bash
-    git clone https://github.com/tu-usuario/mw-convert.git
-    cd mw-convert
+    git clone https://github.com/mikeear/MW-Convert.git
+    cd MW-Convert
     ```
 
 2.  **Instala las dependencias de Python:**
@@ -47,17 +67,18 @@ python gui_app.py
 
 Una vez que la aplicación esté abierta, sigue el flujo de trabajo de 3 pasos:
 
-1.  **Selecciona o arrastra tu archivo Markdown.**
-2.  **Selecciona una plantilla DOCX (opcional).**
+1.  **Selecciona o arrastra** tu archivo Markdown.
+2.  **Selecciona una plantilla DOCX** (opcional).
 3.  **Haz clic en "Convertir a DOCX"** y luego abre tu documento o la carpeta de salida.
 
 ## Créditos
 
-Desarrollado por Diego A. Rábalo
+Desarrollado por **Diego A. Rábalo**
 
--   **LinkedIn:** [Perfil de Diego A. Rábalo](https://www.linkedin.com/in/rabalo?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYmE7N4DBTRqMk9Vla0BdWQ%3D%3D)
--   **Correo Electrónico:** diego_rabalo@hotmail.com
+-   **LinkedIn:** [Perfil de Diego A. Rábalo](https://www.linkedin.com/in/rabalo)
+-   **Correo Electrónico:** [diego_rabalo@hotmail.com](mailto:diego_rabalo@hotmail.com)
 
 ## Licencia
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
+
