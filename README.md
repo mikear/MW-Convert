@@ -8,17 +8,17 @@ MW Convert es una aplicación de escritorio intuitiva y fácil de usar diseñada
 
 ## ✨ Galería de la Aplicación
 
-| Interfaz Principal | Manual de Ayuda Integrado |
-| :---: | :---: |
-| ![Captura de la aplicación MW Convert](assets/app-screenshot.png) | ![Captura del manual de ayuda](assets/help-manual.png) |
+| Interfaz Principal | Manual de Ayuda Integrado | Acerca de |
+| :---: | :---: | :---: |
+| ![Captura de la aplicación MW Convert](assets/app-screenshot.png) | ![Captura del manual de ayuda](assets/help-manual.png) | ![Captura de la ventana Acerca de](assets/acerca-de.png) |
 
 ### Conversión de Alta Fidelidad
 
 Transforma texto plano en documentos profesionales con un solo clic.
 
-| Markdown de Entrada | Documento de Salida |
-| :---: | :---: |
-| ![Ejemplo de código Markdown](assets/markdown-example.png) | ![Ejemplo de documento de salida](assets/output-example.png) |
+| Markdown de Entrada | Documento de Salida | Antes y Después |
+| :---: | :---: | :---: |
+| ![Ejemplo de código Markdown](assets/markdown-example.png) | ![Ejemplo de documento de salida](assets/output-example.png) | ![Comparación antes y después](assets/before-after.png) |
 
 ---
 
@@ -78,6 +78,12 @@ Desarrollado por **Diego A. Rábalo**
 -   **Github:**  [Diego A. Rábalo | Criminólogo & Python Developer](https://github.com/mikear) 
 -   **LinkedIn:** [Perfil de Diego A. Rábalo](https://www.linkedin.com/in/rabalo)
 -   **Correo Electrónico:** [diego_rabalo@hotmail.com](mailto:diego_rabalo@hotmail.com)
+
+## Colaborar
+
+Si encuentras MW Convert útil y te gustaría apoyar su desarrollo, puedes hacer una donación a través de PayPal:
+
+[![](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://paypal.me/diegorabalo)
 
 ## Licencia
 

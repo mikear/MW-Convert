@@ -34,7 +34,7 @@ class MarkdownConverterApp(QMainWindow):
         super().__init__()
         self.setWindowTitle("MW Convert")
         self.setGeometry(100, 100, 400, 450)
-        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/icono_app.ico')))
+        self.setWindowIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/app_icon.ico')))
 
         
 
@@ -154,7 +154,7 @@ class MarkdownConverterApp(QMainWindow):
         markdown_layout = QVBoxLayout()
 
         self.browse_button = QPushButton("Buscar archivo .md")
-        self.browse_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/icons8-búsqueda-50.png')))
+        self.browse_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/search.png')))
         self.browse_button.clicked.connect(self.browse_file)
         markdown_layout.addWidget(self.browse_button)
 
@@ -177,7 +177,7 @@ class MarkdownConverterApp(QMainWindow):
 
         template_button_layout = QHBoxLayout()
         self.select_template_button = QPushButton("Seleccionar Plantilla DOCX")
-        self.select_template_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/icons8-archivo-50.png')))
+        self.select_template_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/file.png')))
         self.select_template_button.clicked.connect(self.select_template_file)
         template_button_layout.addWidget(self.select_template_button)
 
@@ -215,7 +215,7 @@ class MarkdownConverterApp(QMainWindow):
         output_layout.addStretch(1)
 
         self.open_file_button = QPushButton("Abrir documento")
-        self.open_file_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/docx_win-256_32_35918.ico')))
+        self.open_file_button.setIcon(QIcon(os.path.join(os.path.dirname(__file__), 'icons/docx.ico')))
         self.open_file_button.setEnabled(False)
         self.open_file_button.clicked.connect(self.open_output_file)
         output_layout.addWidget(self.open_file_button)
@@ -407,12 +407,12 @@ class MarkdownConverterApp(QMainWindow):
         help_manual_action.triggered.connect(self.show_help_manual)
         help_menu.addAction(help_manual_action)
 
-        about_action = QAction(QIcon(os.path.join(os.path.dirname(__file__), 'icons/icons8-acerca-de-50.png')), "Acerca de", self)
+        about_action = QAction(QIcon(os.path.join(os.path.dirname(__file__), 'icons/about.png')), "Acerca de", self)
         about_action.triggered.connect(self.show_about_dialog)
         help_menu.addAction(about_action)
 
         contribute_menu = menu_bar.addMenu("Contribuir")
-        share_action = QAction(QIcon(os.path.join(os.path.dirname(__file__), 'icons/linkedin_icon.ico')), "Compartir en LinkedIn", self)
+        share_action = QAction(QIcon(os.path.join(os.path.dirname(__file__), 'icons/linkedin.ico')), "Compartir en LinkedIn", self)
         share_action.triggered.connect(self.share_on_linkedin)
         contribute_menu.addAction(share_action)
 
@@ -449,7 +449,7 @@ class MarkdownConverterApp(QMainWindow):
             <p><b>Contacto:</b></p>
             <ul>
                 <li><img src="icons/github.png" width="16" height="16" style="vertical-align: middle;"/> <a href="https://github.com/mikear">GitHub</a></li>
-                <li><img src=\"icons/linkedin_icon.ico\" width=\"16\" height=\"16\" style=\"vertical-align: middle;"/> <a href=\"https://www.linkedin.com/in/rabalo\">LinkedIn</a></li>
+                <li><img src="icons/linkedin.ico" width=\"16\" height=\"16\" style=\"vertical-align: middle;"/> <a href=\"https://www.linkedin.com/in/rabalo\">LinkedIn</a></li>
                 <li><a href=\"mailto:diego_rabalo@hotmail.com\">diego_rabalo@hotmail.com</a></li>
             </ul>
             <p><b>Notas de la Versión 1.3:</b></p>

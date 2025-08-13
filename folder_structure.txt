@@ -1,37 +1,45 @@
-pandoc_app/
-├── .gitignore
-├── app_state.json
-├── folder_structure.txt
-├── gui_app.py
-├── main.py
-├── manual.html
-├── README.md
-├── requirements.txt
-├── assets/
-│   ├── app-screenshot.png
-│   ├── banner.png
-│   ├── before-after.png
-│   ├── help-manual.png
-│   ├── markdown-example.png
-│   └── output-example.png
-├── examples/
-│   └── output/
-│       └── full_markdown_test.docx
-├── icons/
-│   ├── application-exit.svg
-│   ├── applications-office.svg
-│   ├── document-new.svg
-│   ├── document-open.svg
-│   ├── document-save.svg
-│   ├── docx_win-256_32_35918.ico
-│   ├── edit-clear.svg
-│   ├── folder-open.svg
-│   ├── help-browser.svg
-│   ├── icono_app.ico
-│   └── linkedin_icon.ico
-├── markdowns/
-│   └── full_markdown_test.md
-├── styles/
-│   └── .gitkeep
-└── templates/
-    └── .gitkeep
+C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
+├───.gitignore
+├───app_state.json
+├───folder_structure.txt
+├───gui_app.py
+├───LICENSE
+├───main.py
+├───manual.html
+├───README.md
+├───requirements.txt
+├───test_style.py
+├───__pycache__\...
+├───.git\...
+├───assets\
+│   ├───app-screenshot.png
+│   ├───banner.png
+│   ├───before-after.png
+│   ├───help-manual.png
+│   ├───markdown-example.png
+│   └───output-example.png
+├───backup\...
+├───examples\
+│   └───output\
+├───icons\
+│   ├───clear_error.png
+│   ├───convert_about.png
+│   ├───document_new_open.png
+│   ├───docx_win-256_32_35918.ico
+│   ├───folder_open.png
+│   ├───github.png
+│   ├───help_info.png
+│   ├───icono_app.ico
+│   ├───icons8-acerca-de-50.png
+│   ├───icons8-archivo-50.png
+│   ├───icons8-búsqueda-50.png
+│   ├───linkedin_icon.ico
+│   └───paypal.png
+├───markdowns\
+│   ├───cibersecurity_test.md
+│   └───full_markdown_test.md
+├───output\
+├───styles\
+│   └───.gitkeep
+└───templates\
+    └───.gitkeep
