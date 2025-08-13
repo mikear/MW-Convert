@@ -12,13 +12,33 @@ MW Convert es una aplicación de escritorio intuitiva y fácil de usar diseñada
 | :---: | :---: | :---: |
 | ![Captura de la aplicación MW Convert](assets/app-screenshot.png) | ![Captura del manual de ayuda](assets/help-manual.png) | ![Captura de la ventana Acerca de](assets/acerca-de.png) |
 
-### Conversión de Alta Fidelidad
+## 🚀 De Markdown a DOCX: Una Transformación Impecable
 
-Transforma texto plano en documentos profesionales con un solo clic.
+Experimenta la magia de convertir tus ideas en documentos profesionales con MW Convert.
 
-| Markdown de Entrada | Documento de Salida | Antes y Después |
-| :---: | :---: | :---: |
-| ![Ejemplo de código Markdown](assets/markdown-example.png) | ![Ejemplo de documento de salida](assets/output-example.png) | ![Comparación antes y después](assets/before-after.png) |
+### Tu Entrada: Markdown Brillante
+Captura tus pensamientos con la simplicidad de Markdown.
+![Ejemplo de código Markdown](assets/markdown-example.png)
+
+## 🚀 De Markdown a DOCX: Una Transformación Impecable
+
+Experimenta la magia de convertir tus ideas en documentos profesionales con MW Convert.
+
+### Tu Entrada: Markdown Brillante
+Captura tus pensamientos con la simplicidad de Markdown.
+![Ejemplo de código Markdown](assets/markdown-example.png)
+
+### Tu Salida: DOCX Profesional
+Documentos pulidos y listos para cualquier propósito.
+![Ejemplo de documento de salida](assets/output-example.png)
+
+### Antes y Después: La Conversión en Acción
+Observa cómo MW Convert transforma tu texto.
+![Comparación antes y después](assets/before-after.png)
+
+### Antes y Después: La Conversión en Acción
+Observa cómo MW Convert transforma tu texto.
+![Comparación antes y después](assets/before-after.png)
 
 ---
 

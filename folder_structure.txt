@@ -8,16 +8,16 @@ C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
 ├───manual.html
 ├───README.md
 ├───requirements.txt
-├───__pycache__\...
-├───.git\...
 ├───assets\
+│   ├───acerca-de.png
 │   ├───app-screenshot.png
 │   ├───banner.png
 │   ├───before-after.png
+│   ├───DOCX-output-example.png
 │   ├───help-manual.png
 │   ├───markdown-example.png
+│   ├───MD-imput-example.png
 │   └───output-example.png
-├───backup\...
 ├───examples\
 │   └───output\
 ├───icons\
@@ -35,9 +35,9 @@ C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
 │   ├───paypal.png
 │   └───search.png
 ├───markdowns\
+│   ├───~$bersecurity_test.md
 │   ├───cibersecurity_test.md
 │   └───full_markdown_test.md
-├───output\
 ├───styles\
 │   └───.gitkeep
 └───templates\
