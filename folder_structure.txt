@@ -8,7 +8,6 @@ C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
 ├───manual.html
 ├───README.md
 ├───requirements.txt
-├───test_style.py
 ├───__pycache__\...
 ├───.git\...
 ├───assets\
@@ -22,19 +21,19 @@ C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
 ├───examples\
 │   └───output\
 ├───icons\
+│   ├───about.png
+│   ├───app_icon.ico
 │   ├───clear_error.png
 │   ├───convert_about.png
 │   ├───document_new_open.png
-│   ├───docx_win-256_32_35918.ico
+│   ├───docx.ico
+│   ├───file.png
 │   ├───folder_open.png
 │   ├───github.png
 │   ├───help_info.png
-│   ├───icono_app.ico
-│   ├───icons8-acerca-de-50.png
-│   ├───icons8-archivo-50.png
-│   ├───icons8-búsqueda-50.png
-│   ├───linkedin_icon.ico
-│   └───paypal.png
+│   ├───linkedin.ico
+│   ├───paypal.png
+│   └───search.png
 ├───markdowns\
 │   ├───cibersecurity_test.md
 │   └───full_markdown_test.md
