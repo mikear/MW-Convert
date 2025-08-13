@@ -18,23 +18,11 @@ Experimenta la magia de convertir tus ideas en documentos profesionales con MW C
 
 ### Tu Entrada: Markdown Brillante
 Captura tus pensamientos con la simplicidad de Markdown.
-![Ejemplo de código Markdown](assets/markdown-example.png)
-
-## 🚀 De Markdown a DOCX: Una Transformación Impecable
-
-Experimenta la magia de convertir tus ideas en documentos profesionales con MW Convert.
-
-### Tu Entrada: Markdown Brillante
-Captura tus pensamientos con la simplicidad de Markdown.
-![Ejemplo de código Markdown](assets/markdown-example.png)
+![Ejemplo de código Markdown](assets/MD-imput-example.png)
 
 ### Tu Salida: DOCX Profesional
 Documentos pulidos y listos para cualquier propósito.
-![Ejemplo de documento de salida](assets/output-example.png)
-
-### Antes y Después: La Conversión en Acción
-Observa cómo MW Convert transforma tu texto.
-![Comparación antes y después](assets/before-after.png)
+![Ejemplo de documento de salida](assets/DOCX-output-example.png)
 
 ### Antes y Después: La Conversión en Acción
 Observa cómo MW Convert transforma tu texto.
@@ -109,3 +97,6 @@ Si encuentras MW Convert útil y te gustaría apoyar su desarrollo, puedes hacer
 
 Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
 
+## Palabras Clave
+
+`Markdown, DOCX, Converter, Pandoc, Python, PySide6, GUI, Desktop App, Markdown to DOCX, Template, Custom Styles, Document Conversion, Open Source, Developer Tool`
