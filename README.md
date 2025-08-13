@@ -1,19 +1,8 @@
 ![Banner de MW Converter](assets/banner.png)
 
-# MW Convert: Conversor de Markdown a DOCX con Python y Pandoc
+# MW Convert
 
-MW Convert es una potente y fácil de usar **aplicación de escritorio en Python** diseñada para la **conversión de archivos Markdown (.md) a documentos DOCX (.docx)**. Utiliza el robusto motor de **Pandoc** y ofrece soporte para **plantillas DOCX personalizadas**, lo que la hace ideal para generar informes, documentos académicos y cualquier tipo de texto con formato profesional.
-
----
-
-## Tabla de Contenidos
-- [Galería de la Aplicación](#-galería-de-la-aplicación)
-- [Características](#características)
-- [Requisitos](#requisitos)
-- [Instalación](#instalación)
-- [Uso](#uso)
-- [Créditos](#créditos)
-- [Licencia](#licencia)
+MW Convert es una aplicación de escritorio intuitiva y fácil de usar diseñada para convertir archivos Markdown (`.md`) a documentos DOCX (`.docx`) con soporte para plantillas personalizadas.
 
 ---
 
@@ -25,7 +14,7 @@ MW Convert es una potente y fácil de usar **aplicación de escritorio en Python
 
 ### Conversión de Alta Fidelidad
 
-Transforma texto plano en documentos profesionales con un solo clic. Puedes ver un ejemplo del resultado aquí: [full_markdown_test.docx](examples/output/full_markdown_test.docx)
+Transforma texto plano en documentos profesionales con un solo clic.
 
 | Markdown de Entrada | Documento de Salida |
 | :---: | :---: |
