@@ -1,6 +1,5 @@
 C:\Users\diego\OneDrive\Documentos\app\GITHUB\MW CONVERTER\
 ├───.gitignore
-├───app_state.json
 ├───folder_structure.txt
 ├───gui_app.py
 ├───LICENSE
