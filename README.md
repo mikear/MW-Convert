@@ -6,6 +6,14 @@ MW Convert es una aplicación de escritorio intuitiva y fácil de usar diseñada
 
 ---
 
+## ⬇️ Descargas
+
+[![Latest Release](https://img.shields.io/github/v/release/mikear/MW-Convert?label=Última%20versión)](https://github.com/mikear/MW-Convert/releases/latest)
+
+🪟 **Instalador para Windows:** Descarga la última versión desde la página de **[Releases](https://github.com/mikear/MW-Convert/releases/latest)**.
+
+---
+
 ## ✨ Galería de la Aplicación
 
 | Interfaz Principal | Manual de Ayuda Integrado | Acerca de |
