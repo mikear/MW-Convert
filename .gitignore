@@ -28,3 +28,7 @@ app_state.json # If it were used for persistence
 
 # Backup folder
 backup/
+
+# Inno Setup
+installer.iss
+install/
