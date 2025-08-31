@@ -11,7 +11,7 @@ import platform
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional, List
+from typing import List, Optional
 
 logger = logging.getLogger(__name__)
 

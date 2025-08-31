@@ -3,7 +3,6 @@ Tests for the configuration module.
 """
 
 import pytest
-from pathlib import Path
 
 from config import AppConfig, config
 
@@ -29,7 +28,7 @@ class TestAppConfig:
         """Test icon path retrieval."""
         app_icon = AppConfig.get_icon_path("app")
         assert app_icon == "icons/app_icon.ico"
-        
+
         search_icon = AppConfig.get_icon_path("search")
         assert search_icon == "icons/search.png"
 
@@ -41,7 +40,7 @@ class TestAppConfig:
     def test_get_app_info(self):
         """Test application information dictionary."""
         info = AppConfig.get_app_info()
-        
+
         assert info["name"] == "MW Convert"
         assert info["version"] == "1.3"
         assert info["author"] == "Diego A. Rábalo"
@@ -51,7 +50,7 @@ class TestAppConfig:
     def test_get_window_geometry(self):
         """Test window geometry configuration."""
         x, y, width, height = AppConfig.get_window_geometry()
-        
+
         assert x == 100
         assert y == 100
         assert width == 400
@@ -74,7 +73,7 @@ class TestAppConfig:
         """Test output filename generation."""
         output = AppConfig.get_output_filename("test.md")
         assert output == "test.docx"
-        
+
         output = AppConfig.get_output_filename("path/to/document.markdown")
         assert output == "document.docx"
 

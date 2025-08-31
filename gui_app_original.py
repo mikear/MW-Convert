@@ -1,15 +1,32 @@
-import sys
 import os
 import subprocess
+import sys
+
+from PySide6.QtCore import QObject, QSize, Qt, QThread, QUrl, Signal
+from PySide6.QtGui import QAction, QDesktopServices, QIcon
 from PySide6.QtWidgets import (
-    QApplication, QMainWindow, QWidget, QVBoxLayout, QPushButton, QLabel, QMessageBox, QFileDialog, QHBoxLayout, QGroupBox, QMenuBar, QMenu, QDialog, QTextBrowser, QProgressBar
+    QApplication,
+    QDialog,
+    QFileDialog,
+    QGroupBox,
+    QHBoxLayout,
+    QLabel,
+    QMainWindow,
+    QMenu,
+    QMenuBar,
+    QMessageBox,
+    QProgressBar,
+    QPushButton,
+    QTextBrowser,
+    QVBoxLayout,
+    QWidget,
 )
-from PySide6.QtGui import QDesktopServices, QIcon, QAction
-from PySide6.QtCore import Qt, QUrl, QThread, Signal, QObject, QSize
+
 import main
 
+
 def resource_path(relative_path):
-    """ Get absolute path to resource, works for dev and for PyInstaller """
+    """Get absolute path to resource, works for dev and for PyInstaller"""
     try:
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
@@ -17,6 +34,7 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
+
 
 class Worker(QObject):
     finished = Signal(str)
@@ -31,26 +49,30 @@ class Worker(QObject):
     def run(self):
         self.started.emit()
         try:
-            output_docx_path = main.convert_md_to_docx(self.input_md_path, reference_docx_path=self.template_path)
+            output_docx_path = main.convert_md_to_docx(
+                self.input_md_path, reference_docx_path=self.template_path
+            )
             if output_docx_path:
                 self.finished.emit(output_docx_path)
             else:
-                self.error.emit("La conversión falló. Revise la consola para más detalles.")
+                self.error.emit(
+                    "La conversión falló. Revise la consola para más detalles."
+                )
         except Exception as e:
             self.error.emit(f"Error durante la conversión: {str(e)}")
+
 
 class MarkdownConverterApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("MW Convert")
         self.setGeometry(100, 100, 400, 450)
-        self.setWindowIcon(QIcon(resource_path('icons/app_icon.ico')))
-
-        
+        self.setWindowIcon(QIcon(resource_path("icons/app_icon.ico")))
 
         # Global stylesheet for a modern dark theme
         # Global stylesheet for a modern dark theme
-        app.setStyleSheet("""
+        app.setStyleSheet(
+            """
             QMainWindow {
                 background-color: #2b2b2b; /* Slightly lighter dark background for the main window */
                 color: #f0f0f0;
@@ -134,7 +156,8 @@ class MarkdownConverterApp(QMainWindow):
                 background-color: #6495ED;
                 border-radius: 5px;
             }
-        """)
+        """
+        )
 
         self.central_widget = QWidget()
         self.setCentralWidget(self.central_widget)
@@ -144,7 +167,9 @@ class MarkdownConverterApp(QMainWindow):
         self.create_menu_bar()
 
         self.new_project_button = QPushButton("Nuevo Proyecto")
-        self.new_project_button.setIcon(QIcon(resource_path('icons/document_new_open.png')))
+        self.new_project_button.setIcon(
+            QIcon(resource_path("icons/document_new_open.png"))
+        )
         self.new_project_button.clicked.connect(self.reset_application_state)
         self.new_project_button.setEnabled(False)
         self.layout.addWidget(self.new_project_button)
@@ -164,19 +189,23 @@ class MarkdownConverterApp(QMainWindow):
         markdown_layout = QVBoxLayout()
 
         self.browse_button = QPushButton("Buscar archivo .md")
-        self.browse_button.setIcon(QIcon(resource_path('icons/search.png')))
+        self.browse_button.setIcon(QIcon(resource_path("icons/search.png")))
         self.browse_button.clicked.connect(self.browse_file)
         markdown_layout.addWidget(self.browse_button)
 
         self.drop_area_label = QLabel("Arrastre y suelte su archivo .md aquí")
         self.drop_area_label.setAlignment(Qt.AlignCenter)
-        self.drop_area_label.setStyleSheet("QLabel { border: 2px dashed #aaa; border-radius: 5px; background-color: #333; padding: 20px; }")
+        self.drop_area_label.setStyleSheet(
+            "QLabel { border: 2px dashed #aaa; border-radius: 5px; background-color: #333; padding: 20px; }"
+        )
         markdown_layout.addWidget(self.drop_area_label)
         markdown_group.setLayout(markdown_layout)
         self.layout.addWidget(markdown_group)
 
         # Group 2: DOCX Template Selection (Opcional)
-        self.template_group = QGroupBox("Paso 2: Selección de Plantilla DOCX (Opcional)")
+        self.template_group = QGroupBox(
+            "Paso 2: Selección de Plantilla DOCX (Opcional)"
+        )
         template_layout = QVBoxLayout()
         self.template_group.setEnabled(False)
 
@@ -187,12 +216,14 @@ class MarkdownConverterApp(QMainWindow):
 
         template_button_layout = QHBoxLayout()
         self.select_template_button = QPushButton("Seleccionar Plantilla DOCX")
-        self.select_template_button.setIcon(QIcon(resource_path('icons/file.png')))
+        self.select_template_button.setIcon(QIcon(resource_path("icons/file.png")))
         self.select_template_button.clicked.connect(self.select_template_file)
         template_button_layout.addWidget(self.select_template_button)
 
         self.clear_template_button = QPushButton()
-        self.clear_template_button.setIcon(QIcon(resource_path('icons/clear_error.png')))
+        self.clear_template_button.setIcon(
+            QIcon(resource_path("icons/clear_error.png"))
+        )
         self.clear_template_button.setFixedSize(32, 32)
         self.clear_template_button.clicked.connect(self.clear_template_selection)
         self.clear_template_button.hide()
@@ -203,7 +234,7 @@ class MarkdownConverterApp(QMainWindow):
 
         # Convert Button
         self.convert_button = QPushButton("Convertir a DOCX")
-        self.convert_button.setIcon(QIcon(resource_path('icons/convert_about.png')))
+        self.convert_button.setIcon(QIcon(resource_path("icons/convert_about.png")))
         self.convert_button.clicked.connect(self.convert_selected_file)
         self.convert_button.setEnabled(False)
         self.layout.addWidget(self.convert_button)
@@ -225,13 +256,13 @@ class MarkdownConverterApp(QMainWindow):
         output_layout.addStretch(1)
 
         self.open_file_button = QPushButton("Abrir documento")
-        self.open_file_button.setIcon(QIcon(resource_path('icons/docx.ico')))
+        self.open_file_button.setIcon(QIcon(resource_path("icons/docx.ico")))
         self.open_file_button.setEnabled(False)
         self.open_file_button.clicked.connect(self.open_output_file)
         output_layout.addWidget(self.open_file_button)
 
         self.open_folder_button = QPushButton("Ver en carpeta")
-        self.open_folder_button.setIcon(QIcon(resource_path('icons/folder_open.png')))
+        self.open_folder_button.setIcon(QIcon(resource_path("icons/folder_open.png")))
         self.open_folder_button.setEnabled(False)
         self.open_folder_button.clicked.connect(self.open_output_folder)
         output_layout.addWidget(self.open_folder_button)
@@ -250,31 +281,36 @@ class MarkdownConverterApp(QMainWindow):
         developer_info_layout.addWidget(developed_by_label)
 
         github_url = "https://github.com/mikear"
-        github_icon_path = resource_path('icons/github.png')
+        github_icon_path = resource_path("icons/github.png")
         github_button = QPushButton(QIcon(github_icon_path), "")
         github_button.setFixedSize(24, 24)
         github_button.setIconSize(QSize(16, 16))
         github_button.setFlat(True)
-        github_button.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(github_url)))
+        github_button.clicked.connect(
+            lambda: QDesktopServices.openUrl(QUrl(github_url))
+        )
         developer_info_layout.addWidget(github_button)
 
         linkedin_url = "https://www.linkedin.com/in/rabalo?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BYmE7N4DBTRqMk9Vla0BdWQ%3D%3D"
-        linkedin_icon_path = resource_path('icons/linkedin.ico')
-        linkedin_button = QPushButton(QIcon(linkedin_icon_path), "") # Empty text, only icon
-        linkedin_button.setFixedSize(24, 24) # Set a fixed size for the button
-        linkedin_button.setIconSize(QSize(16, 16)) # Set icon size
-        linkedin_button.setFlat(True) # Make background transparent
-        linkedin_button.clicked.connect(lambda: QDesktopServices.openUrl(QUrl(linkedin_url)))
+        linkedin_icon_path = resource_path("icons/linkedin.ico")
+        linkedin_button = QPushButton(
+            QIcon(linkedin_icon_path), ""
+        )  # Empty text, only icon
+        linkedin_button.setFixedSize(24, 24)  # Set a fixed size for the button
+        linkedin_button.setIconSize(QSize(16, 16))  # Set icon size
+        linkedin_button.setFlat(True)  # Make background transparent
+        linkedin_button.clicked.connect(
+            lambda: QDesktopServices.openUrl(QUrl(linkedin_url))
+        )
         developer_info_layout.addWidget(linkedin_button)
 
         self.layout.addLayout(developer_info_layout)
 
-        
-
-    
-
     def dragEnterEvent(self, event):
-        if event.mimeData().hasUrls() and self.childAt(event.pos()) == self.drop_area_label:
+        if (
+            event.mimeData().hasUrls()
+            and self.childAt(event.pos()) == self.drop_area_label
+        ):
             event.acceptProposedAction()
         else:
             event.ignore()
@@ -283,16 +319,20 @@ class MarkdownConverterApp(QMainWindow):
         if self.childAt(event.pos()) == self.drop_area_label:
             for url in event.mimeData().urls():
                 file_path = url.toLocalFile()
-                if file_path.endswith('.md'):
+                if file_path.endswith(".md"):
                     self.current_md_path = file_path
-                    self.drop_area_label.setText(f"Archivo seleccionado: {os.path.basename(file_path)}")
+                    self.drop_area_label.setText(
+                        f"Archivo seleccionado: {os.path.basename(file_path)}"
+                    )
                     self.convert_button.setEnabled(True)
-                    self.template_group.setEnabled(True) # Enable template selection
+                    self.template_group.setEnabled(True)  # Enable template selection
                     self.new_project_button.setEnabled(False)
                     self.status_label.setText("")
                     self.open_file_button.setEnabled(False)
                     self.open_folder_button.setEnabled(False)
-                    self.output_group.setEnabled(False) # Disable output group until conversion
+                    self.output_group.setEnabled(
+                        False
+                    )  # Disable output group until conversion
                     break
             event.acceptProposedAction()
         else:
@@ -300,24 +340,32 @@ class MarkdownConverterApp(QMainWindow):
 
     def browse_file(self):
         file_dialog = QFileDialog()
-        file_path, _ = file_dialog.getOpenFileName(self, "Seleccionar archivo Markdown", "", "Archivos Markdown (*.md)")
+        file_path, _ = file_dialog.getOpenFileName(
+            self, "Seleccionar archivo Markdown", "", "Archivos Markdown (*.md)"
+        )
         if file_path:
             self.current_md_path = file_path
-            self.drop_area_label.setText(f"Archivo seleccionado: {os.path.basename(file_path)}")
+            self.drop_area_label.setText(
+                f"Archivo seleccionado: {os.path.basename(file_path)}"
+            )
             self.convert_button.setEnabled(True)
-            self.template_group.setEnabled(True) # Enable template selection
+            self.template_group.setEnabled(True)  # Enable template selection
             self.new_project_button.setEnabled(False)
             self.status_label.setText("")
             self.open_file_button.setEnabled(False)
             self.open_folder_button.setEnabled(False)
-            self.output_group.setEnabled(False) # Disable output group until conversion
+            self.output_group.setEnabled(False)  # Disable output group until conversion
 
     def select_template_file(self):
         file_dialog = QFileDialog()
-        template_path, _ = file_dialog.getOpenFileName(self, "Seleccionar Plantilla DOCX", "", "Archivos DOCX (*.docx)")
+        template_path, _ = file_dialog.getOpenFileName(
+            self, "Seleccionar Plantilla DOCX", "", "Archivos DOCX (*.docx)"
+        )
         if template_path:
             self.template_path = template_path
-            self.template_path_label.setText(f"Plantilla seleccionada: {os.path.basename(template_path)}")
+            self.template_path_label.setText(
+                f"Plantilla seleccionada: {os.path.basename(template_path)}"
+            )
             self.clear_template_button.show()
         else:
             self.template_path = None
@@ -347,11 +395,15 @@ class MarkdownConverterApp(QMainWindow):
 
     def _on_conversion_finished(self, output_docx_path):
         self.progress_bar.hide()
-        self.status_label.setText(f"¡Conversión exitosa! Salida: {os.path.basename(output_docx_path)}")
+        self.status_label.setText(
+            f"¡Conversión exitosa! Salida: {os.path.basename(output_docx_path)}"
+        )
         self.output_docx_path = output_docx_path
         self.open_file_button.setEnabled(True)
         self.open_folder_button.setEnabled(True)
-        self.output_group.setEnabled(True) # Enable output group after successful conversion
+        self.output_group.setEnabled(
+            True
+        )  # Enable output group after successful conversion
         self.new_project_button.setEnabled(True)
         self.convert_button.setEnabled(False)
         self.thread.quit()
@@ -377,13 +429,19 @@ class MarkdownConverterApp(QMainWindow):
 
     def open_output_folder(self):
         if self.output_docx_path and os.path.exists(self.output_docx_path):
-            QDesktopServices.openUrl(QUrl.fromLocalFile(os.path.dirname(self.output_docx_path)))
+            QDesktopServices.openUrl(
+                QUrl.fromLocalFile(os.path.dirname(self.output_docx_path))
+            )
 
     def convert_selected_file(self):
         if self.current_md_path:
             self._perform_conversion(self.current_md_path)
         else:
-            QMessageBox.warning(self, "Advertencia", "Por favor, seleccione un archivo Markdown primero.")
+            QMessageBox.warning(
+                self,
+                "Advertencia",
+                "Por favor, seleccione un archivo Markdown primero.",
+            )
 
     def reset_application_state(self):
         self.current_md_path = None
@@ -396,15 +454,17 @@ class MarkdownConverterApp(QMainWindow):
         self.open_folder_button.setEnabled(False)
         self.new_project_button.setEnabled(False)
         self.convert_button.setEnabled(False)
-        self.template_group.setEnabled(False) # Disable template group
-        self.output_group.setEnabled(False) # Disable output group
+        self.template_group.setEnabled(False)  # Disable template group
+        self.output_group.setEnabled(False)  # Disable output group
         self.drop_area_label.setText("Arrastre y suelte su archivo .md aquí")
 
     def create_menu_bar(self):
         menu_bar = self.menuBar()
 
         file_menu = menu_bar.addMenu("Archivo")
-        new_project_action = QAction(QIcon(resource_path('icons/document_new_open.png')), "Nuevo Proyecto", self)
+        new_project_action = QAction(
+            QIcon(resource_path("icons/document_new_open.png")), "Nuevo Proyecto", self
+        )
         new_project_action.triggered.connect(self.reset_application_state)
         file_menu.addAction(new_project_action)
 
@@ -413,25 +473,39 @@ class MarkdownConverterApp(QMainWindow):
         file_menu.addAction(exit_action)
 
         help_menu = menu_bar.addMenu("Ayuda")
-        help_manual_action = QAction(QIcon(resource_path('icons/help_info.png')), "Manual de Ayuda", self)
+        help_manual_action = QAction(
+            QIcon(resource_path("icons/help_info.png")), "Manual de Ayuda", self
+        )
         help_manual_action.triggered.connect(self.show_help_manual)
         help_menu.addAction(help_manual_action)
 
-        about_action = QAction(QIcon(resource_path('icons/about.png')), "Acerca de", self)
+        about_action = QAction(
+            QIcon(resource_path("icons/about.png")), "Acerca de", self
+        )
         about_action.triggered.connect(self.show_about_dialog)
         help_menu.addAction(about_action)
 
         contribute_menu = menu_bar.addMenu("Contribuir")
-        share_action = QAction(QIcon(resource_path('icons/linkedin.ico')), "Compartir en LinkedIn", self)
+        share_action = QAction(
+            QIcon(resource_path("icons/linkedin.ico")), "Compartir en LinkedIn", self
+        )
         share_action.triggered.connect(self.share_on_linkedin)
         contribute_menu.addAction(share_action)
 
-        donate_action = QAction(QIcon(os.path.join(os.path.dirname(__file__), 'icons/paypal.png')), "Donar", self)
+        donate_action = QAction(
+            QIcon(os.path.join(os.path.dirname(__file__), "icons/paypal.png")),
+            "Donar",
+            self,
+        )
         donate_action.triggered.connect(self.open_paypal_link)
         contribute_menu.addAction(donate_action)
 
     def convert_from_menu(self):
-        QMessageBox.information(self, "Convertir", "La función de convertir desde el menú se implementará aquí.")
+        QMessageBox.information(
+            self,
+            "Convertir",
+            "La función de convertir desde el menú se implementará aquí.",
+        )
 
     def show_about_dialog(self):
         about_dialog = QDialog(self)
@@ -441,7 +515,8 @@ class MarkdownConverterApp(QMainWindow):
         layout = QVBoxLayout()
         text_browser = QTextBrowser()
         text_browser.setOpenExternalLinks(True)
-        text_browser.setStyleSheet("""
+        text_browser.setStyleSheet(
+            """
             QTextBrowser {
                 background-color: #FFFFFF; /* White background */
                 color: #000000; /* Black text */
@@ -452,8 +527,10 @@ class MarkdownConverterApp(QMainWindow):
             a:hover {
                 color: #0000AA; /* Darker blue on hover */
             }
-        """)
-        text_browser.setHtml("""
+        """
+        )
+        text_browser.setHtml(
+            """
             <p><b>MW Convert v1.3</b></p>
             <p>Desarrollado por Diego A. Rábalo</p>
             <p><b>Contacto:</b></p>
@@ -478,7 +555,8 @@ class MarkdownConverterApp(QMainWindow):
                 <li>A <b>The Qt Company</b> por el framework <a href=\"https://www.qt.io/product/qt6/pyside6\">PySide6</a>.</li>
                 <li>A <b>Juho Vepsäläinen</b> (creador) y <b>Jessica Tegner</b> (mantenedora) por la librería <a href=\"https://github.com/JessicaTegner/pypandoc\">pypandoc</a>.</li>
             </ul>
-        """)
+        """
+        )
         layout.addWidget(text_browser)
 
         close_button = QPushButton("Cerrar")
@@ -495,7 +573,8 @@ class MarkdownConverterApp(QMainWindow):
 
         layout = QVBoxLayout()
         text_browser = QTextBrowser()
-        text_browser.setStyleSheet("""
+        text_browser.setStyleSheet(
+            """
             QTextBrowser {
                 background-color: #FFFFFF; /* White background */
                 color: #000000; /* Black text */
@@ -506,11 +585,12 @@ class MarkdownConverterApp(QMainWindow):
             a:hover {
                 color: #0000AA; /* Darker blue on hover */
             }
-        """)
+        """
+        )
 
-        manual_path = os.path.join(os.path.dirname(__file__), 'manual.html')
+        manual_path = os.path.join(os.path.dirname(__file__), "manual.html")
         if os.path.exists(manual_path):
-            with open(manual_path, 'r', encoding='utf-8') as f:
+            with open(manual_path, "r", encoding="utf-8") as f:
                 text_browser.setHtml(f.read())
         else:
             text_browser.setPlainText("Error: Manual de ayuda no encontrado.")
@@ -530,7 +610,10 @@ class MarkdownConverterApp(QMainWindow):
         linkedin_profile = "https://www.linkedin.com/in/rabalo"
 
         import urllib.parse
-        share_text = urllib.parse.quote_plus(f"{app_details}\n\n{creator_info}\n\nConoce más sobre el desarrollo y otras herramientas en mi perfil: {linkedin_profile}")
+
+        share_text = urllib.parse.quote_plus(
+            f"{app_details}\n\n{creator_info}\n\nConoce más sobre el desarrollo y otras herramientas en mi perfil: {linkedin_profile}"
+        )
 
         linkedin_share_url = f"https://www.linkedin.com/sharing/share-offsite/?url={urllib.parse.quote_plus(linkedin_profile)}&title={share_text}"
 

@@ -2,26 +2,24 @@
 Tests for the utilities module.
 """
 
+from unittest.mock import MagicMock, patch
+
 import pytest
-import tempfile
-import os
-from pathlib import Path
-from unittest.mock import patch, MagicMock
 
 from utils import (
-    get_resource_path,
-    ensure_directory_exists,
-    is_file_readable,
-    get_file_size_mb,
-    validate_file_extension,
-    sanitize_filename,
-    get_system_info,
-    format_file_size,
-    is_pandoc_available,
-    get_pandoc_version,
-    validate_pandoc_installation,
     create_backup_filename,
+    ensure_directory_exists,
+    format_file_size,
+    get_file_size_mb,
+    get_pandoc_version,
+    get_resource_path,
+    get_system_info,
+    is_file_readable,
+    is_pandoc_available,
+    sanitize_filename,
     truncate_text,
+    validate_file_extension,
+    validate_pandoc_installation,
 )
 
 
@@ -88,7 +86,7 @@ class TestFileOperations:
         test_file = tmp_path / "test.txt"
         content = "A" * 1024 * 1024  # 1 MB
         test_file.write_text(content)
-        
+
         size = get_file_size_mb(str(test_file))
         assert size is not None
         assert abs(size - 1.0) < 0.1  # Should be approximately 1 MB
@@ -128,7 +126,7 @@ class TestFilenameSanitization:
 
     def test_sanitize_filename_invalid_chars(self):
         """Test sanitizing filename with invalid characters."""
-        result = sanitize_filename("file<>:\"/\\|?*.txt")
+        result = sanitize_filename('file<>:"/\\|?*.txt')
         assert "<" not in result
         assert ">" not in result
         assert ":" not in result
@@ -191,8 +189,7 @@ class TestPandocValidation:
     def test_get_pandoc_version_success(self, mock_run):
         """Test getting Pandoc version successfully."""
         mock_run.return_value = MagicMock(
-            returncode=0,
-            stdout="pandoc 2.19.2\nCompiled with pandoc-types...\n"
+            returncode=0, stdout="pandoc 2.19.2\nCompiled with pandoc-types...\n"
         )
         version = get_pandoc_version()
         assert version == "pandoc 2.19.2"
@@ -210,7 +207,7 @@ class TestPandocValidation:
         """Test Pandoc installation validation success."""
         mock_available.return_value = True
         mock_version.return_value = "pandoc 2.19.2"
-        
+
         is_available, message = validate_pandoc_installation()
         assert is_available is True
         assert "pandoc 2.19.2" in message
@@ -219,7 +216,7 @@ class TestPandocValidation:
     def test_validate_pandoc_installation_failure(self, mock_available):
         """Test Pandoc installation validation failure."""
         mock_available.return_value = False
-        
+
         is_available, message = validate_pandoc_installation()
         assert is_available is False
         assert "no está instalado" in message
@@ -232,7 +229,7 @@ class TestUtilityFunctions:
         """Test backup filename creation."""
         original = "/path/to/file.txt"
         backup = create_backup_filename(original)
-        
+
         assert "backup" in backup
         assert backup.endswith(".txt")
         assert "/path/to/" in backup
@@ -266,10 +263,11 @@ class TestSystemOperations:
     def test_open_file_linux(self, mock_run, mock_system):
         """Test opening file on Linux."""
         mock_system.return_value = "Linux"
-        
+
         from utils import open_file_with_default_app
-        result = open_file_with_default_app("test.txt")
-        
+
+        open_file_with_default_app("test.txt")
+
         mock_run.assert_called_once_with(["xdg-open", "test.txt"], check=True)
 
     @patch("utils.platform.system")
@@ -277,10 +275,11 @@ class TestSystemOperations:
     def test_open_directory_linux(self, mock_run, mock_system):
         """Test opening directory on Linux."""
         mock_system.return_value = "Linux"
-        
+
         from utils import open_directory_in_explorer
-        result = open_directory_in_explorer("/path/to/dir")
-        
+
+        open_directory_in_explorer("/path/to/dir")
+
         mock_run.assert_called_once_with(["xdg-open", "/path/to/dir"], check=True)
 
 

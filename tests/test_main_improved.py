@@ -2,25 +2,23 @@
 Unit tests for the improved main module.
 """
 
+import os
+import sys
+from unittest.mock import patch
+
 import pytest
-import tempfile
-import shutil
-from pathlib import Path
-from unittest.mock import patch, MagicMock
 
 # Import the module to test
-import sys
-import os
-
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from main_improved import (
-    convert_md_to_docx,
-    validate_input_file,
-    validate_template_file,
-    create_output_directory,
+
+from main_improved import (  # noqa: E402
     ConversionError,
     ValidationError,
+    convert_md_to_docx,
+    create_output_directory,
     setup_logging,
+    validate_input_file,
+    validate_template_file,
 )
 
 

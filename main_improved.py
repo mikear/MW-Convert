@@ -11,7 +11,6 @@ from typing import Optional, Union
 
 import pypandoc
 
-
 # Configure logging
 logger = logging.getLogger(__name__)
 

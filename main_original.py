@@ -1,5 +1,7 @@
 import os
+
 import pypandoc
+
 
 def convert_md_to_docx(input_md_path, output_dir="output", reference_docx_path=None):
     """
@@ -14,23 +16,24 @@ def convert_md_to_docx(input_md_path, output_dir="output", reference_docx_path=N
 
     extra_args = []
     if reference_docx_path:
-        extra_args.extend(['--reference-doc', reference_docx_path])
+        extra_args.extend(["--reference-doc", reference_docx_path])
 
     try:
-        # Especificar el formato de entrada como 'gfm+smart' 
+        # Especificar el formato de entrada como 'gfm+smart'
         # (GitHub-Flavored Markdown con tipografía inteligente)
         pypandoc.convert_file(
             input_md_path,
-            'docx',
-            format='gfm+smart',
+            "docx",
+            format="gfm+smart",
             outputfile=output_docx_path,
-            extra_args=extra_args
+            extra_args=extra_args,
         )
         print(f"Conversión exitosa. Salida: {output_docx_path}")
         return output_docx_path
     except Exception as e:
         print(f"Error durante la conversión con pypandoc: {str(e)}")
         return None
+
 
 if __name__ == "__main__":
     # Ejemplo de uso para pruebas

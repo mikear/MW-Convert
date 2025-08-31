@@ -12,7 +12,7 @@ import urllib.parse
 from pathlib import Path
 from typing import Optional
 
-from PySide6.QtCore import QObject, QSize, QThread, Qt, QUrl, Signal
+from PySide6.QtCore import QObject, QSize, Qt, QThread, QUrl, Signal
 from PySide6.QtGui import QAction, QDesktopServices, QIcon
 from PySide6.QtWidgets import (
     QApplication,
@@ -30,7 +30,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-from main import convert_md_to_docx, ConversionError, ValidationError, setup_logging
+from main import ConversionError, ValidationError, convert_md_to_docx, setup_logging
 
 # Configure logging for GUI
 logger = logging.getLogger(__name__)

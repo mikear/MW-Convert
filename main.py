@@ -11,7 +11,6 @@ from typing import Optional, Union
 
 import pypandoc
 
-
 # Configure logging
 logger = logging.getLogger(__name__)
 
@@ -228,7 +227,7 @@ def hello_world():
 
 ## Enlaces y énfasis
 
-Este es un [enlace](https://example.com) y esto es **texto en negrita** 
+Este es un [enlace](https://example.com) y esto es **texto en negrita**
 y esto es *texto en cursiva*.
 
 ---
